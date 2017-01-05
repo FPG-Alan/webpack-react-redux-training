@@ -1,17 +1,17 @@
-import 'babel-polyfill';
-import test from './test';
-import $ from 'jquery';
+import React from 'react'
+import { render } from 'react-dom'
+import App from './app.js'
 
-import './styles/main.css';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './reducers'
 
-$(function(){
-	console.log('page loaded...');
+let store = createStore(todoApp)
 
-	let testBtn = $('.test-btn');
-	testBtn.on('click',function(){
-		require.ensure(['./components/test/index.js'],function(require){
-			var testComponent=require('./components/test/index.js');
-			new testComponent('hello test',$);
-		});
-	});
-});
+render(
+	<Provider store={store}>
+		<App/>
+	</Provider>
+	,
+    document.getElementById("main-container")
+);

@@ -1,0 +1,9 @@
+.add-btn{
+	cursor: pointer;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #123456;
+	color: #fff;
+}

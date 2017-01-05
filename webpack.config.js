@@ -12,9 +12,12 @@ module.exports = {
 	},
 	module: {
 		loaders: [{
-			test: /\.js$/,
+			test: /\.js|jsx$/,
 			exclude: /node_modules/,
-			loader: 'babel-loader'
+			loader: 'babel',
+			query: {
+				presets: ['es2015','react']
+			}			
 		},{
 			test: /\.(png|jpg)$/,
 			loader: "url-loader",
@@ -42,7 +45,7 @@ module.exports = {
 				removeCommits: true,
 				collapseWhitespace: false
 			}
-		}),
+		})/*,
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
 				warnings: false,
@@ -50,6 +53,6 @@ module.exports = {
 			output: {
 				comments: false
 			}
-		})
+		})*/
 	]
 };
