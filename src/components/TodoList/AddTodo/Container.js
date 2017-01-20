@@ -10,11 +10,13 @@ const mapStateToProps = (state) => {
 // map Dispatch from props
 const mapDispatchToProps = (dispatch) => {
 	return {
-    	onAddClick: () => dispatch({
-    		'type':'ADD',
-    		'text':'test1',
-    		'completed':false
-    	})
+    	onAddClick: (e) => {
+	    	dispatch({
+	    		'type':'ADD',
+	    		'text':e.value,
+	    		'completed':false
+	    	})
+    	}
   	}
 }
 

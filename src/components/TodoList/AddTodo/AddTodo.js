@@ -8,7 +8,7 @@ class AddTodo extends Component{
 		return (
 			<div>
 				<input ref={node=>{inputDom = node}}/>
-				<div className="add-btn" onClick={onAddClick}>Add New Todo</div>
+				<div className="add-btn" onClick={()=>onAddClick(inputDom)}>Add New Todo</div>
 			</div>
 		)
 	}
