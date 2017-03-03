@@ -1,2 +1,2 @@
-# webpack-training
-train webpack skill
+# webpack/react/redux
+train webpack/react/redux skill
